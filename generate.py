@@ -27,7 +27,7 @@ if __name__ == "__main__":
         line_numbers.append(dice_roll_outcome_base_10 - lowest_base_10_outcome)
 
     with open(f"internal{os.sep}partial.bas", "r") as f:
-        partial_lines = f.read().splitlines()[2:]
+        partial_lines = f.read().splitlines()[4:]
 
     with open("main.bas", "w") as f:
         f.write(
