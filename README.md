@@ -21,7 +21,7 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 ## Requirements
 
 - [VICE C64 Emulator](https://vice-emu.sourceforge.io)
-- Optional: Python for generating BASIC code.
+- Optional: Python 2/3 for generating BASIC code.
 - Optional: [petcat](https://vice-emu.sourceforge.io/vice_16.html) for compiling BASIC code.
 
 ## Usage

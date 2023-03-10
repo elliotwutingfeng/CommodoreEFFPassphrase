@@ -2,7 +2,8 @@ import itertools
 import os
 
 
-def base6_str_to_base10(n: str) -> int:
+def base6_str_to_base10(n):
+    # type: (str) -> int
     digits = [int(d) for d in str(n)]
     return sum((digit * (6 ** (len(digits) - i - 1))) for i, digit in enumerate(digits))
 
