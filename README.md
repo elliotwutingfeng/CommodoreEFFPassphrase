@@ -15,7 +15,7 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 ## Warning
 
 - This project is a recreational proof-of-concept on how passphrases may be generated on the Commodore 64.
-- The random number generator in the Commoodore 64 is **not** cryptographically secure.
+- The random number generator in the Commodore 64 is **not** cryptographically secure.
 - If you need dice-generated passphrases for critical applications, follow the directions provided by the [Electronic Frontier Foundation](https://www.eff.org/dice).
 
 ## Requirements
@@ -43,3 +43,7 @@ In VICE C64, go to
 ```bash
 make build
 ```
+
+## Acknowledgements
+
+GOTO with calculated expressions hack by [Frithjof Dau](https://lemon64.com/forum/viewtopic.php?t=56869), published on DATA WELT magazine issue 4/85.
