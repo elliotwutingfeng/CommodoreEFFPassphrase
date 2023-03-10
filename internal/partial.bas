@@ -1,6 +1,6 @@
 rem this file is for code generation purposes only
 rem it cannot run on any BASIC interpreter
-rem this hack enables goto with calculated expressions
+rem this hack enables goto with calculated expressions (C64 only)
 rem see https://lemon64.com/forum/viewtopic.php?t=56869
 1forx=.to94:reada:poke832+x,a:c=c+a:next
 2ifc<>10356thenprint"bad checksum":end
