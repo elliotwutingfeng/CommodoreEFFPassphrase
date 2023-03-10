@@ -12,7 +12,7 @@ if __name__ == "__main__":
         words = [line.split("\t")[1] for line in f.read().splitlines()]
 
     starting_line_number = 1000  # line number from which passphrase words begin from
-    nextk_line_number = 280  # line number where "nextk" is located
+    next_word_line_number = 280  # line number where for-loop for picking each word ends
     dice_rolls_per_word = 4
 
     dice_roll_outcomes = sorted(
@@ -34,7 +34,7 @@ if __name__ == "__main__":
             "\n".join(
                 partial_lines
                 + [
-                    f'{line_number+starting_line_number}print"{words[line_number]}":goto{nextk_line_number}'
+                    f'{line_number+starting_line_number}print"{words[line_number]}":goto{next_word_line_number}'
                     for line_number in line_numbers
                 ]
             )
