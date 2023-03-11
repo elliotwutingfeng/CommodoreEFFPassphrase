@@ -14,9 +14,9 @@ rem see https://lemon64.com/forum/viewtopic.php?t=56869
 70data165,123,72,165,122,72,165,58,72,165,57,72,169,141,72,32,121
 80data0,32,142,3,32,163,168,76,174,167,32,115,0,32,138,173,32
 90data247,183,201,250,176,1,96,76,8,175
-240r=rnd(-ti):numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1:beginfrom=1000
-250fork=1topassphrasesize:n=-lowoutcome+beginfrom
-260fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(6^(numrolls-i))):next
-270goton
-280next
-290end
+100r=rnd(-ti):numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1:begin=1000:e=140
+110fork=1topassphrasesize:n=-lowoutcome+begin
+120fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(6^(numrolls-i))):next
+130goton
+140next
+150end

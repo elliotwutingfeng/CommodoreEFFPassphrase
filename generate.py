@@ -21,7 +21,6 @@ if __name__ == "__main__":
         words = [line.split("\t")[1] for line in lines]
 
     starting_line_number = 1000  # line number from which passphrase words begin from
-    next_word_line_number = 280  # line number where for-loop for picking each word ends
 
     line_numbers = []  # each line number is dice roll outcome in base 10
     lowest_base_10_outcome = -1
@@ -39,11 +38,10 @@ if __name__ == "__main__":
             "\n".join(
                 partial_lines
                 + [
-                    '%dprint"%s":goto%d'
+                    '%dprint"%s":gotoe'
                     % (
                         line_number + starting_line_number,
                         words[line_number],
-                        next_word_line_number,
                     )
                     for line_number in line_numbers
                 ]
