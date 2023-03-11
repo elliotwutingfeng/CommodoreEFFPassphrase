@@ -23,7 +23,7 @@ if __name__ == "__main__":
     starting_line_number = 1000  # line number from which passphrase words begin from
     next_word_line_number = 280  # line number where for-loop for picking each word ends
 
-    line_numbers = []
+    line_numbers = []  # each line number is dice roll outcome in base 10
     lowest_base_10_outcome = -1
     for dice_roll_outcome in dice_roll_outcomes:
         dice_roll_outcome_base_10 = base6_str_to_base10(dice_roll_outcome)
