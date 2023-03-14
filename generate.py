@@ -1,49 +1,38 @@
-import itertools
 import os
 
+from more_itertools import chunked_even
 
-def base6_str_to_base10(n):
-    # type: (str) -> int
-    digits = [int(d) for d in str(n)]
-    return sum((digit * (6 ** (len(digits) - i - 1))) for i, digit in enumerate(digits))
+
+def extract_words(starting_line_number):
+    # type: (int) -> tuple[list[str], list[str]]
+    with open("eff_short_wordlist_2_0.txt", "r") as f:
+        lines = f.read().splitlines()
+        words = [line.split("\t")[1] for line in lines]
+        # line number from which passphrase words begin from
+        data_lines = []
+        for i, row in enumerate(chunked_even(words, 5)):
+            data_lines.append(
+                str(starting_line_number + i) + "data" + ",".join('"' + word + '"' for word in row)
+            )
+    return data_lines, words
+
+
+def read_data_line(words):
+    # type: (list[str]) -> list[str]
+    return ["0bksize=%d:dimo$(bksize):fori=1tobksize:reado$(i):next" % len(words)]
 
 
 if __name__ == "__main__":
-    with open("eff_short_wordlist_2_0.txt", "r") as f:
-        lines = f.read().splitlines()
-        dice_rolls_per_word = len(lines[0].split("\t")[0])
-        dice_roll_outcomes = sorted(
-            [
-                "".join(str(x) for x in s)
-                for s in itertools.product(range(1, 7), repeat=dice_rolls_per_word)
-            ]
-        )
-        words = [line.split("\t")[1] for line in lines]
+    data_lines, words = extract_words(1000)
 
-    starting_line_number = 1000  # line number from which passphrase words begin from
+    partials = [
+        {"filename": "partial_c64_c128.bas", "lines": []},
+        {"filename": "partial_cbm2_pet.bas", "lines": []},
+        {"filename": "partial_plus4.bas", "lines": []},
+    ]  # type: list[dict]
+    for partial in partials:
+        with open("internal%s%s" % (os.sep, partial["filename"]), "r") as f:
+            partial["lines"] = f.read().splitlines()[2:]
 
-    line_numbers = []  # each line number is dice roll outcome in base 10
-    lowest_base_10_outcome = -1
-    for dice_roll_outcome in dice_roll_outcomes:
-        dice_roll_outcome_base_10 = base6_str_to_base10(dice_roll_outcome)
-        if lowest_base_10_outcome < 0:
-            lowest_base_10_outcome = dice_roll_outcome_base_10
-        line_numbers.append(dice_roll_outcome_base_10 - lowest_base_10_outcome)
-
-    with open("internal%spartial.bas" % os.sep, "r") as f:
-        partial_lines = f.read().splitlines()[4:]
-
-    with open("main.bas", "w") as f:
-        f.write(
-            "\n".join(
-                partial_lines
-                + [
-                    '%dprint"%s":gotoe'
-                    % (
-                        line_number + starting_line_number,
-                        words[line_number],
-                    )
-                    for line_number in line_numbers
-                ]
-            )
-        )
+        with open("src%s%s" % (os.sep, partial["filename"].replace("partial_", "")), "w") as f:
+            f.write("\n".join(read_data_line(words) + partial["lines"] + data_lines))
