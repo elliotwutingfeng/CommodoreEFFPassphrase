@@ -16,29 +16,15 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 
 ## Supported devices
 
-| Device (VICE command(s))                               | BASIC Version | Program File                         |
-|--------------------------------------------------------|---------------|--------------------------------------|
-| Commodore 64 (`x64` or `x64sc` or `x64dtv`)            | V2.0          | [bin/c64.prg](bin/c64.prg)           |
-| Creative Micro Designs SuperCPU64 (`xscpu64`)          | V2.0          | [bin/c64.prg](bin/c64.prg)           |
-| Commodore 128 (`x128`)                                 | V7.0          | [bin/c128.prg](bin/c128.prg)         |
-| Commodore CBM-II (`xcbm2` or `xcbm5x0`)                | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
-| Commodore PET (`xpet`)                                 | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
-| Commodore Plus/4 (`xplus4`)                            | V3.5          | [bin/plus4.prg](bin/plus4.prg)       |
-| Commodore VIC-20 (`xvic`) (*additional setup required) | V2.0          | [bin/vic20.prg](bin/vic20.prg)         |
-
-### Additional setup for VIC-20 (`xvic`)
-
-Commodore VIC-20 requires memory expansion before the program can be loaded into the machine.
-
-In VICE, go to
-
-- **Preferences** &rarr; **Settings**
-- **Machine** &rarr; **Model**
-- **Memory expansions** &rarr; **Common configurations** &rarr; **All (block0/1/2/3/5)**
-
-Then perform a hard reset
-
-- **File** &rarr; **Reset** &rarr; **Hard reset**
+| Device (VICE command(s))                      | BASIC Version | Program File                         |
+|-----------------------------------------------|---------------|--------------------------------------|
+| Commodore 64 (`x64` or `x64sc` or `x64dtv`)   | V2.0          | [bin/c64.prg](bin/c64.prg)           |
+| Creative Micro Designs SuperCPU64 (`xscpu64`) | V2.0          | [bin/c64.prg](bin/c64.prg)           |
+| Commodore 128 (`x128`)                        | V7.0          | [bin/c128.prg](bin/c128.prg)         |
+| Commodore CBM-II (`xcbm2` or `xcbm5x0`)       | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
+| Commodore PET (`xpet`)                        | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
+| Commodore Plus/4 (`xplus4`)                   | V3.5          | [bin/plus4.prg](bin/plus4.prg)       |
+| Commodore VIC-20 (`xvic`)                     | V2.0          | [bin/vic20.prg](bin/vic20.prg)       |
 
 ## Warning
 
@@ -54,7 +40,25 @@ Then perform a hard reset
 
 ## Usage
 
+### Additional setup for VIC-20 (`xvic`)
+
+Skip this step if you are not using the VIC-20 (`xvic`).
+
+Commodore VIC-20 requires memory expansion before the program can be loaded into the machine.
+
+In VICE, go to
+
+- **Preferences** &rarr; **Settings**
+- **Machine** &rarr; **Model**
+- **Memory expansions** &rarr; **Common configurations** &rarr; **All (block0/1/2/3/5)**
+
+Then perform a hard reset
+
+- **File** &rarr; **Reset** &rarr; **Hard reset**
+
 ### Run in VICE Emulator
+
+If you are using the VIC-20 (`xvic`), complete the aforementioned additional setup first.
 
 In VICE, go to
 
