@@ -1,15 +1,46 @@
 import os
+from itertools import chain, islice
 
 
 def chunked_even(lst, n):
-    if n < 1:
-        return lst
-    remainder = len(lst) % n
-    num_donors = (n - remainder - 1) if remainder else 0
-    donor_start_idx = len(lst) - remainder - (num_donors * n)
-    chunks = [lst[i : i + n] for i in range(0, donor_start_idx, n)]
-    if n > 1:
-        chunks += [lst[i : i + n - 1] for i in range(donor_start_idx, len(lst), n - 1)]
+    # type: (list, int) -> list
+    N = len(lst)
+    if N < 1:
+        return []
+
+    # Lists are either size `full_size <= n` or `partial_size = full_size - 1`
+    q, r = divmod(N, n)
+    num_lists = q + (1 if r > 0 else 0)
+    q, r = divmod(N, num_lists)
+    full_size = q + (1 if r > 0 else 0)
+    partial_size = full_size - 1
+    num_full = N - partial_size * num_lists
+    num_partial = num_lists - num_full
+
+    chunks = []  # type: (list)
+
+    # Append num_full lists of full_size
+    partial_start_idx = num_full * full_size
+    if full_size > 0:
+        chunks += chain(
+            [
+                (list(islice(lst, i, i + full_size)))
+                for i in range(0, partial_start_idx, full_size)
+            ]
+        )
+
+    # Append num_partial lists of partial_size
+    if partial_size > 0:
+        chunks += chain(
+            [
+                list(islice(lst, i, i + partial_size))
+                for i in range(
+                    partial_start_idx,
+                    partial_start_idx + (num_partial * partial_size),
+                    partial_size,
+                )
+            ]
+        )
     return chunks
 
 
@@ -22,7 +53,9 @@ def extract_words(starting_line_number, is_vic20=False):
         data_lines = []
         for i, row in enumerate(chunked_even(words, 2 if is_vic20 else 5)):
             data_lines.append(
-                str(starting_line_number + i) + "dA" + ",".join('"' + word + '"' for word in row)
+                str(starting_line_number + i)
+                + "dA"
+                + ",".join('"' + word + '"' for word in row)
             )
     return data_lines, words
 
@@ -49,7 +82,9 @@ if __name__ == "__main__":
         with open("internal%s%s" % (os.sep, partial["filename"]), "r") as f:
             partial["lines"] = f.read().splitlines()[2:]
 
-        with open("src%s%s" % (os.sep, partial["filename"].replace("partial_", "")), "w") as f:
+        with open(
+            "src%s%s" % (os.sep, partial["filename"].replace("partial_", "")), "w"
+        ) as f:
             f.write(
                 "\n".join(
                     read_data_line(words, is_vic20)
