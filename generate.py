@@ -60,25 +60,32 @@ def extract_words(starting_line_number, is_vic20=False):
     return data_lines, words
 
 
-def read_data_line(words, is_vic20=False):
-    # type: (list[str], bool) -> list[str]
+def read_data_line(words, is_vic20=False, is_x16=False):
+    # type: (list[str], bool, bool) -> list[str]
+    if is_vic20 and is_x16:
+        raise ValueError("Both `is_vic20` and `is_x16` cannot be set to True")
     if is_vic20:
         return ["0bs=%d:dimo$(bs)" % len(words), "1fori=1tobs:reado$(i):next"]
+    if is_x16:
+        return ["0DIMO$(%d):FORI=1TO%d:READO$(I):NEXT" % (len(words), len(words))]
     return ["0bksize=%d:dimo$(bksize):fori=1tobksize:reado$(i):next" % len(words)]
 
 
 if __name__ == "__main__":
     data_lines, words = extract_words(1000)
     data_lines_vic20, _ = extract_words(1000, is_vic20=True)
+    data_lines_x16 = list(map(str.swapcase, data_lines))
 
     partials = [
         {"filename": "partial_c64_c128.bas", "lines": []},
         {"filename": "partial_cbm2_pet.bas", "lines": []},
         {"filename": "partial_plus4.bas", "lines": []},
         {"filename": "partial_vic20.bas", "lines": []},
+        {"filename": "partial_x16.bas", "lines": []},
     ]  # type: list[dict]
     for partial in partials:
         is_vic20 = partial["filename"] == "partial_vic20.bas"
+        is_x16 = partial["filename"] == "partial_x16.bas"
         with open("internal%s%s" % (os.sep, partial["filename"]), "r") as f:
             partial["lines"] = f.read().splitlines()[2:]
 
@@ -87,8 +94,14 @@ if __name__ == "__main__":
         ) as f:
             f.write(
                 "\n".join(
-                    read_data_line(words, is_vic20)
+                    read_data_line(words, is_vic20, is_x16)
                     + partial["lines"]
-                    + (data_lines_vic20 if is_vic20 else data_lines)
+                    + (
+                        data_lines_vic20
+                        if is_vic20
+                        else data_lines_x16
+                        if is_x16
+                        else data_lines
+                    )
                 )
             )
