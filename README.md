@@ -8,7 +8,7 @@ Generate memorable [EFF Dice-Generated Passphrases](https://www.eff.org/dice) in
 
 Works on the [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64), [Creative Micro Designs SuperCPU64](https://en.wikipedia.org/wiki/SuperCPU), [Commodore 128](https://en.wikipedia.org/wiki/Commodore_128), [Commodore CBM-II](https://en.wikipedia.org/wiki/Commodore_CBM-II), [Commodore PET](https://en.wikipedia.org/wiki/Commodore_PET), [Commodore Plus/4](https://en.wikipedia.org/wiki/Commodore_Plus/4), [Commodore VIC-20](https://en.wikipedia.org/wiki/Commodore_VIC-20), and [Commander X16](https://commanderx16.com).
 
-Written for the [VICE Emulator](https://vice-emu.sourceforge.io) and [Commander X16 Emulator](https://github.com/commanderx16/x16-emulator).
+Written for the [VICE Emulator](https://vice-emu.sourceforge.io) and [Commander X16 Emulator](https://github.com/X16Community/x16-emulator).
 
 Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_wordlist_2_0.txt).
 
@@ -42,7 +42,7 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 
 ## Requirements
 
-- [VICE Emulator](https://vice-emu.sourceforge.io) or [Commander X16 Emulator](https://github.com/commanderx16/x16-emulator)
+- [VICE Emulator](https://vice-emu.sourceforge.io) or [Commander X16 Emulator](https://github.com/X16Community/x16-emulator)
 - Optional: Python 2/3 for generating BASIC code.
 - Optional: [petcat](https://vice-emu.sourceforge.io/vice_16.html) for compiling BASIC code.
 
