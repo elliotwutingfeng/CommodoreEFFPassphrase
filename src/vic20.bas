@@ -1,8 +1,8 @@
 0bs=1296:dimo$(bs)
 1fori=1tobs:reado$(i):next
-2poke36879,8:pRchr$(147);:pRchr$(158);
-3pR"passphrase generator":pR""
-4pR"author: wu tingfeng":pR""
+2poke36879,8:pRchr$(142)chr$(147);
+3pRchr$(158)"passphrase generator"
+4pR"":pR"author: wu tingfeng":pR""
 5pR"license: bsd-3-clause"
 6nr=4:lo=int((6^nr-1)/(6-1))-1:dimd(nr)
 7fori=1tonr:d(i)=6^(nr-i):next
@@ -19,7 +19,7 @@
 18ifa$<>"y"anda$<>"n"then16
 19ifa$="n"then21
 20goto8
-21pRchr$(30);:end
+21pRchr$(147)chr$(30);:end
 1000dA"aardvark","abandoned"
 1001dA"abbreviate","abdomen"
 1002dA"abhorrence","abiding"

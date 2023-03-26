@@ -1,6 +1,6 @@
 rem this file is for code generation purposes only
 rem it cannot run on any BASIC interpreter
-1color0,1:color4,1:pRchr$(147);:color1,8,6
+1color0,1:color4,1:pRchr$(142)chr$(147);:color1,8,6
 2h$="**** passphrase generator ****"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
@@ -16,4 +16,4 @@ rem it cannot run on any BASIC interpreter
 14ifa$<>"y"anda$<>"n"then13
 15ifa$="n"then17
 16goto8
-17color1,16,6:end
+17pRchr$(147);:color1,16,6:end

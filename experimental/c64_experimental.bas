@@ -1,4 +1,4 @@
-0poke53280,0:poke53281,0:pRchr$(147);:pRchr$(158);
+0poke53280,0:poke53281,0:pRchr$(142)chr$(147)chr$(158);
 1h$="**** passphrase generator ****"
 2s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
@@ -23,7 +23,7 @@
 160ifa$<>"y"anda$<>"n"then150
 170ifa$="n"then190
 180goto100
-190pRchr$(153);:end
+190pRchr$(147)chr$(153);:end
 1000pR"aardvark":gotoe
 1001pR"abandoned":gotoe
 1002pR"abbreviate":gotoe

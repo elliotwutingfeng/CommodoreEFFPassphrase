@@ -1,5 +1,5 @@
 0bksize=1296:dimo$(bksize):fori=1tobksize:reado$(i):next
-1color0,1:color4,1:pRchr$(147);:color1,8,6
+1color0,1:color4,1:pRchr$(142)chr$(147);:color1,8,6
 2h$="**** passphrase generator ****"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
@@ -15,7 +15,7 @@
 14ifa$<>"y"anda$<>"n"then13
 15ifa$="n"then17
 16goto8
-17color1,16,6:end
+17pRchr$(147);:color1,16,6:end
 1000dA"aardvark","abandoned","abbreviate","abdomen","abhorrence"
 1001dA"abiding","abnormal","abrasion","absorbing","abundant"
 1002dA"abyss","academy","accountant","acetone","achiness"

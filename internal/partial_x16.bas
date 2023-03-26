@@ -1,6 +1,6 @@
 rem this file is for code generation purposes only
 rem it cannot run on any basic interpreter
-1?CHR$(147):SCREEN$03:?CHR$($90)CHR$(1)CHR$(147)CHR$($9E);
+1?CHR$(147):SCREEN$03:?CHR$($90)CHR$(1)CHR$(142)CHR$(147)CHR$($9E);
 2H$="**** PASSPHRASE GENERATOR ****"
 3S=INT(20-LEN(H$)/2):?SPC(S)H$SPC(S):?"":H$="AUTHOR: WU TINGFENG"
 4S=INT(20-LEN(H$)/2):?SPC(S)H$SPC(S):?"":?"":H$="LICENSE: BSD-3-CLAUSE"
@@ -16,4 +16,4 @@ rem it cannot run on any basic interpreter
 14IFA$<>"Y"ANDA$<>"N"THEN13
 15IFA$="N"THEN17
 16GOTO8
-17?CHR$($99);:END
+17?CHR$(147)CHR$($99);:END
