@@ -2,7 +2,7 @@ rem this file is for code generation purposes only
 rem it cannot run on any BASIC interpreter
 1poke55328,0:poke55329,0:pRchr$(142)chr$(147)chr$(158);
 2h$="**** passphrase generator ****"
-3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="author: wu tingfeng"
+3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
 5s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR""
 6numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1
