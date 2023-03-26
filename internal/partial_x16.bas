@@ -16,4 +16,4 @@ rem it cannot run on any basic interpreter
 14IFA$<>"Y"ANDA$<>"N"THEN13
 15IFA$="N"THEN17
 16GOTO8
-17?CHR$(147)CHR$($99);:END
+17?CHR$(147):SCREEN$00:?CHR$($1F)CHR$(1)CHR$(142)CHR$(147)CHR$($05);:END

@@ -23,7 +23,8 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 | Commodore 64 (`x64` or `x64sc` or `x64dtv`)   | V2.0          | [bin/c64.prg](bin/c64.prg)           |
 | Creative Micro Designs SuperCPU64 (`xscpu64`) | V2.0          | [bin/c64.prg](bin/c64.prg)           |
 | Commodore 128 (`x128`)                        | V7.0          | [bin/c128.prg](bin/c128.prg)         |
-| Commodore CBM-II (`xcbm2` or `xcbm5x0`)       | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
+| Commodore CBM-II P500 (`xcbm5x0`)             | V4.0          | [bin/cbm5x0.prg](bin/cbm5x0.prg)     |
+| Commodore CBM-II (`xcbm2`)                    | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
 | Commodore PET (`xpet`)                        | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
 | Commodore Plus/4 (`xplus4`)                   | V3.5          | [bin/plus4.prg](bin/plus4.prg)       |
 | Commodore VIC-20 (`xvic`)                     | V2.0          | [bin/vic20.prg](bin/vic20.prg)       |

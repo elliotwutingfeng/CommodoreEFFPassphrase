@@ -14,12 +14,12 @@
 13fori=1tonr
 14n=n+((int(rnd(1)*6)+1)*int(d(i))):next
 15pRo$(n):next
-16pRchr$(31):a$="":pR"generate another"
+16pRchr$(159):a$="":pR"generate another"
 17input"passphrase (y/n)";a$
 18ifa$<>"y"anda$<>"n"then16
 19ifa$="n"then21
 20goto8
-21pRchr$(147)chr$(30);:end
+21poke36879,27:pRchr$(147)chr$(31);:end
 1000dA"aardvark","abandoned"
 1001dA"abbreviate","abdomen"
 1002dA"abhorrence","abiding"

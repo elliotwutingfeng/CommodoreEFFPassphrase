@@ -27,4 +27,4 @@ rem see https://lemon64.com/forum/viewtopic.php?t=56869
 160ifa$<>"y"anda$<>"n"then150
 170ifa$="n"then190
 180goto100
-190pRchr$(147)chr$(153);:end
+190poke53280,14:poke53281,6:pRchr$(147)chr$(154);:end

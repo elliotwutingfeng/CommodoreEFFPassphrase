@@ -1,21 +1,21 @@
 0bksize=1296:dimo$(bksize):fori=1tobksize:reado$(i):next
-1pRchr$(142)chr$(147);
+1poke55328,0:poke55329,0:pRchr$(142)chr$(147)chr$(158);
 2h$="**** passphrase generator ****"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
 5s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR""
 6numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1
 7dimd(numrolls):fori=1tonumrolls:d(i)=6^(numrolls-i):next
-8pR"":w$="":input"enter number of words to generate (3-20)";w$
+8pRchr$(153):w$="":input"enter number of words to generate (3-20)";w$
 9passphrasesize=val(w$):ifpassphrasesize<3orpassphrasesize>20then8
-10r=rnd(-ti):pR"":fork=1topassphrasesize:n=-lowoutcome
+10r=rnd(-ti):pRchr$(5):fork=1topassphrasesize:n=-lowoutcome
 11fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(d(i))):next
 12pRo$(n):next
-13pR"":a$="":input"generate another passphrase (y/n)";a$
+13pRchr$(154):a$="":input"generate another passphrase (y/n)";a$
 14ifa$<>"y"anda$<>"n"then13
 15ifa$="n"then17
 16goto8
-17pRchr$(147)chr$(14);:end
+17poke55328,3:poke55329,1:pRchr$(147)chr$(14)chr$(31);:end
 1000dA"aardvark","abandoned","abbreviate","abdomen","abhorrence"
 1001dA"abiding","abnormal","abrasion","absorbing","abundant"
 1002dA"abyss","academy","accountant","acetone","achiness"

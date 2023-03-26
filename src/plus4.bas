@@ -1,5 +1,5 @@
 0bksize=1296:dimo$(bksize):fori=1tobksize:reado$(i):next
-1color0,1:color4,1:pRchr$(142)chr$(147);:color1,8,6
+1color0,1:color4,1:pRchr$(142)chr$(147)chr$(158);
 2h$="**** passphrase generator ****"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
@@ -11,11 +11,11 @@
 10r=rnd(-ti):color1,2,7:pR"":fork=1topassphrasesize:n=-lowoutcome
 11fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(d(i))):next
 12pRo$(n):next
-13color1,14,4:pR"":a$="":input"generate another passphrase (y/n)";a$
+13color1,14,6:pR"":a$="":input"generate another passphrase (y/n)";a$
 14ifa$<>"y"anda$<>"n"then13
 15ifa$="n"then17
 16goto8
-17pRchr$(147);:color1,16,6:end
+17color0,2:color4,15,6:pRchr$(147);:color1,1:end
 1000dA"aardvark","abandoned","abbreviate","abdomen","abhorrence"
 1001dA"abiding","abnormal","abrasion","absorbing","abundant"
 1002dA"abyss","academy","accountant","acetone","achiness"

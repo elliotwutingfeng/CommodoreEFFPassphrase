@@ -1,8 +1,8 @@
 rem this file is for code generation purposes only
 rem it cannot run on any BASIC interpreter
-1poke53280,0:poke53281,0:pRchr$(142)chr$(147)chr$(158);
+1poke55328,0:poke55329,0:pRchr$(142)chr$(147)chr$(158);
 2h$="**** passphrase generator ****"
-3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":h$="author: wu tingfeng"
+3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
 5s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR""
 6numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1
@@ -16,4 +16,4 @@ rem it cannot run on any BASIC interpreter
 14ifa$<>"y"anda$<>"n"then13
 15ifa$="n"then17
 16goto8
-17pRchr$(147)chr$(153);:end
+17poke55328,3:poke55329,1:pRchr$(147)chr$(14)chr$(31);:end

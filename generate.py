@@ -77,8 +77,10 @@ if __name__ == "__main__":
     data_lines_x16 = list(map(str.swapcase, data_lines))
 
     partials = [
-        {"filename": "partial_c64_c128.bas", "lines": []},
+        {"filename": "partial_c64.bas", "lines": []},
+        {"filename": "partial_c128.bas", "lines": []},
         {"filename": "partial_cbm2_pet.bas", "lines": []},
+        {"filename": "partial_cbm5x0.bas", "lines": []},
         {"filename": "partial_plus4.bas", "lines": []},
         {"filename": "partial_vic20.bas", "lines": []},
         {"filename": "partial_x16.bas", "lines": []},
