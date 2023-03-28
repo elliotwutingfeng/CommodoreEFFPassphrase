@@ -75,8 +75,16 @@ In VICE, go to
 
 In the terminal, run the following
 
+#### Linux/macOS
+
 ```bash
-x16emu -prg x16.prg -run
+x16emu -run -prg bin/x16.prg
+```
+
+#### Windows
+
+```powershell
+x16emu.exe -run -prg bin\x16.prg
 ```
 
 ## Development
