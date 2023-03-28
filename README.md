@@ -16,24 +16,17 @@ Uses the [EFF short wordlist v2](https://eff.org/files/2016/09/08/eff_short_word
 
 ## Supported devices
 
-### Commodore devices
-
-| Device (VICE command(s))                      | BASIC Version | Program File                         |
-|-----------------------------------------------|---------------|--------------------------------------|
-| Commodore 64 (`x64` or `x64sc` or `x64dtv`)   | V2.0          | [bin/c64.prg](bin/c64.prg)           |
-| Creative Micro Designs SuperCPU64 (`xscpu64`) | V2.0          | [bin/c64.prg](bin/c64.prg)           |
-| Commodore 128 (`x128`)                        | V7.0          | [bin/c128.prg](bin/c128.prg)         |
-| Commodore CBM-II P500 (`xcbm5x0`)             | V4.0          | [bin/cbm5x0.prg](bin/cbm5x0.prg)     |
-| Commodore CBM-II (`xcbm2`)                    | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
-| Commodore PET (`xpet`)                        | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
-| Commodore Plus/4 (`xplus4`)                   | V3.5          | [bin/plus4.prg](bin/plus4.prg)       |
-| Commodore VIC-20 (`xvic`)                     | V2.0          | [bin/vic20.prg](bin/vic20.prg)       |
-
-### Other devices
-
-| Device        | Program File               |
-|---------------|----------------------------|
-| Commander X16 | [src/x16.bas](src/x16.bas) |
+| Device (emulator command(s))                  | Emulator               | BASIC Version | Program File                         |
+|-----------------------------------------------|------------------------|---------------|--------------------------------------|
+| Commodore 64 (`x64` or `x64sc` or `x64dtv`)   | VICE                   | V2.0          | [bin/c64.prg](bin/c64.prg)           |
+| Creative Micro Designs SuperCPU64 (`xscpu64`) | VICE                   | V2.0          | [bin/c64.prg](bin/c64.prg)           |
+| Commodore 128 (`x128`)                        | VICE                   | V7.0          | [bin/c128.prg](bin/c128.prg)         |
+| Commodore CBM-II P500 (`xcbm5x0`)             | VICE                   | V4.0          | [bin/cbm5x0.prg](bin/cbm5x0.prg)     |
+| Commodore CBM-II (`xcbm2`)                    | VICE                   | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
+| Commodore PET (`xpet`)                        | VICE                   | V4.0          | [bin/cbm2_pet.prg](bin/cbm2_pet.prg) |
+| Commodore Plus/4 (`xplus4`)                   | VICE                   | V3.5          | [bin/plus4.prg](bin/plus4.prg)       |
+| Commodore VIC-20 (`xvic`)                     | VICE                   | V2.0          | [bin/vic20.prg](bin/vic20.prg)       |
+| Commander X16 (`x16emu`)                      | Commander X16 Emulator | V2.0          | [bin/x16.prg](bin/x16.prg)           |
 
 ## Warning
 
@@ -83,7 +76,7 @@ In VICE, go to
 In the terminal, run the following
 
 ```bash
-x16emu -bas x16.bas -run
+x16emu -prg x16.prg -run
 ```
 
 ## Development

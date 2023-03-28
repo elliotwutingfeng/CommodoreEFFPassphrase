@@ -5,7 +5,8 @@ build:
 	&& petcat -w3 -o bin/plus4.prg -- src/plus4.bas\
 	&& petcat -w2 -o bin/c64.prg -- src/c64.bas\
 	&& petcat -w70 -o bin/c128.prg -- src/c128.bas\
-	&& petcat -w2 -o bin/vic20.prg -- src/vic20.bas
+	&& petcat -w2 -o bin/vic20.prg -- src/vic20.bas\
+	&& petcat -w2 -o bin/x16.prg -- src/x16.bas
 
 experiment:
 	(python experimental/generate_c64_experimental.py || python3 experimental/generate_c64_experimental.py)\

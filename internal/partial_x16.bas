@@ -1,19 +1,19 @@
 rem this file is for code generation purposes only
 rem it cannot run on any basic interpreter
-1?CHR$(147):SCREEN$03:?CHR$($90)CHR$(1)CHR$(142)CHR$(147)CHR$($9E);
-2H$="**** PASSPHRASE GENERATOR ****"
-3S=INT(20-LEN(H$)/2):?SPC(S)H$SPC(S):?"":H$="AUTHOR: WU TINGFENG"
-4S=INT(20-LEN(H$)/2):?SPC(S)H$SPC(S):?"":?"":H$="LICENSE: BSD-3-CLAUSE"
-5S=INT(20-LEN(H$)/2):?SPC(S)H$SPC(S):?""
-6NUMROLLS=4:LOWOUTCOME=INT((6^NUMROLLS-1)/(6-1))-1
-7DIMD(NUMROLLS):FORI=1TONUMROLLS:D(I)=6^(NUMROLLS-I):NEXT
-8?CHR$($99):W$="":INPUT"ENTER NUMBER OF WORDS TO GENERATE (3-20)";W$
-9PASSPHRASESIZE=VAL(W$):IFPASSPHRASESIZE<3ORPASSPHRASESIZE>20THEN8
-10R=RND(-TI):?CHR$($05):FORK=1TOPASSPHRASESIZE:N=-LOWOUTCOME
-11FORI=1TONUMROLLS:N=N+((INT(RND(1)*6)+1)*INT(D(I))):NEXT
-12?O$(N):NEXT
-13?CHR$($9A):A$="":INPUT"GENERATE ANOTHER PASSPHRASE (Y/N)";A$
-14IFA$<>"Y"ANDA$<>"N"THEN13
-15IFA$="N"THEN17
-16GOTO8
-17?CHR$(147):SCREEN$00:?CHR$($1F)CHR$(1)CHR$(142)CHR$(147)CHR$($05);:END
+1printchr$(147):printchr$($90)chr$(1)chr$(142)chr$(147)chr$($9e);
+2h$="**** passphrase generator ****"
+3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="author: wu tingfeng"
+4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
+5s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR""
+6numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1
+7dimd(numrolls):fori=1tonumrolls:d(i)=6^(numrolls-i):next
+8pRchr$($99):w$="":input"enter number of words to generate (3-20)";w$
+9passphrasesize=val(w$):ifpassphrasesize<3orpassphrasesize>20then8
+10r=rnd(-ti):pRchr$($05):fork=1topassphrasesize:n=-lowoutcome
+11fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(d(i))):next
+12pRo$(n):next
+13pRchr$($9a):a$="":input"generate another passphrase (y/n)";a$
+14ifa$<>"y"anda$<>"n"then13
+15ifa$="n"then17
+16goto8
+17pRchr$(147):pRchr$($1f)chr$(1)chr$(142)chr$(147)chr$($05);:end
