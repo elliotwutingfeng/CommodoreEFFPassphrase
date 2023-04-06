@@ -44,19 +44,14 @@ def chunked_even(lst, n):
     return chunks
 
 
-def extract_words(starting_line_number, is_vic20=False):
-    # type: (int, bool) -> tuple[list[str], list[str]]
+def extract_words(is_vic20=False):
+    # type: (bool) -> tuple[list[str], list[str]]
     with open("eff_short_wordlist_2_0.txt", "r") as f:
         lines = f.read().splitlines()
         words = [line.split("\t")[1] for line in lines]
-        # line number from which passphrase words begin from
         data_lines = []
-        for i, row in enumerate(chunked_even(words, 2 if is_vic20 else 5)):
-            data_lines.append(
-                str(starting_line_number + i)
-                + "dA"
-                + ",".join('"' + word + '"' for word in row)
-            )
+        for row in chunked_even(words, 3 if is_vic20 else 6):
+            data_lines.append("dA" + ",".join('"%s"' % word for word in row))
     return data_lines, words
 
 
@@ -72,8 +67,8 @@ def read_data_line(words, is_vic20=False, is_x16=False):
 
 
 if __name__ == "__main__":
-    data_lines, words = extract_words(1000)
-    data_lines_vic20, _ = extract_words(1000, is_vic20=True)
+    data_lines, words = extract_words()
+    data_lines_vic20, _ = extract_words(is_vic20=True)
 
     partials = [
         {"filename": "partial_c64.bas", "lines": []},

@@ -1,6 +1,6 @@
 rem this file is for code generation purposes only
 rem it cannot run on any basic interpreter
-1printchr$(147):printchr$($90)chr$(1)chr$(142)chr$(147)chr$($9e);
+1pRchr$(147):pRchr$($90)chr$(1)chr$(142)chr$(147)chr$($9e);
 2h$="**** passphrase generator ****"
 3s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="author: wu tingfeng"
 4s=int(20-len(h$)/2):pRspc(s)h$spc(s):pR"":pR"":h$="license: bsd-3-clause"
