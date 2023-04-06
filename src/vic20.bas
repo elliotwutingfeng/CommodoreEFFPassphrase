@@ -17,7 +17,7 @@
 16pRchr$(159):a$="":pR"generate another"
 17input"passphrase (y/n)";a$
 18ifa$<>"y"anda$<>"n"then16
-19ifa$="n"then21
+19ifa$="n"thenn=.:ps=.:goto21
 20goto8
 21poke36879,27:pRchr$(147)chr$(31);:end
 dA"aardvark","abandoned","abbreviate"

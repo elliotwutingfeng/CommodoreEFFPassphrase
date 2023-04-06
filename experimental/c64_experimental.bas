@@ -15,13 +15,13 @@
 80dA0,32,142,3,32,163,168,76,174,167,32,115,0,32,138,173,32
 90dA247,183,201,250,176,1,96,76,8,175
 100pRchr$(153):w$="":input"enter number of words to generate (3-20)";w$
-110passphrasesize=val(w$):ifpassphrasesize<3orpassphrasesize>20then100
-120r=rnd(-ti):pRchr$(5):fork=1topassphrasesize:n=-lowoutcome+begin
+110ps=val(w$):ifps<3orps>20then100
+120r=rnd(-ti):pRchr$(5):fork=1tops:n=-lowoutcome+begin
 130fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(d(i))):next:goton
 140next
 150pRchr$(154):a$="":input"generate another passphrase (y/n)";a$
 160ifa$<>"y"anda$<>"n"then150
-170ifa$="n"then190
+170ifa$="n"thenn=.:ps=.:goto190
 180goto100
 190poke53280,14:poke53281,6:pRchr$(147)chr$(154);:end
 1000pR"aardvark":gotoe

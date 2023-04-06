@@ -7,13 +7,13 @@
 6numrolls=4:lowoutcome=int((6^numrolls-1)/(6-1))-1
 7dimd(numrolls):fori=1tonumrolls:d(i)=6^(numrolls-i):next
 8pRchr$(153):w$="":input"enter number of words to generate (3-20)";w$
-9passphrasesize=val(w$):ifpassphrasesize<3orpassphrasesize>20then8
-10r=rnd(-ti):pRchr$(5):fork=1topassphrasesize:n=-lowoutcome
+9ps=val(w$):ifps<3orps>20then8
+10r=rnd(-ti):pRchr$(5):fork=1tops:n=-lowoutcome
 11fori=1tonumrolls:n=n+((int(rnd(1)*6)+1)*int(d(i))):next
 12pRo$(n):next
 13pRchr$(154):a$="":input"generate another passphrase (y/n)";a$
 14ifa$<>"y"anda$<>"n"then13
-15ifa$="n"then17
+15ifa$="n"thenn=.:ps=.:goto17
 16goto8
 17poke53280,14:poke53281,6:pRchr$(147)chr$(154);:end
 dA"aardvark","abandoned","abbreviate","abdomen","abhorrence","abiding"
